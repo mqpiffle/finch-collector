@@ -5,6 +5,8 @@ body {
 }
 
 main {
+    width: min(960px, 100%);
+    margin: 0 auto;
     flex: 1 0 auto;
 }
 
