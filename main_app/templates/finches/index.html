@@ -9,7 +9,11 @@
         <p>Subclass: {{ finch.tax_subclass }}</p>
         <p>Description: {{ finch.description }}</p>
         <p>Age: {{ finch.age_days }} days</p>
+        <a
+            href="{% url 'detail' finch.id %}"
+            class="btn"
+            >View this finch</a
+        >
     </div>
-    <a href="{% url 'detail' finch.id %}">View this finch</a>
 </div>
 {% endfor %} {% endblock %}
