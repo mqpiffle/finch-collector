@@ -7,11 +7,24 @@ MEALS = [
 ]
 
 # Create your models here.
+class Bug(models.Model):
+    name = models.CharField(max_length=50)
+    color = models.CharField(max_length=25)
+
+    def __str__(self):
+        return f"{self.color} {self.name}"
+    
+    def get_absolute_url(self):
+        return reverse("bugs_detail", kwargs={"pk": self.id})
+    
+
 class Finch(models.Model):
     name = models.CharField(max_length=100)
     tax_subclass = models.CharField(max_length=100)
     description = models.TextField(max_length=250)
     age_days = models.IntegerField()
+
+    bugs = models.ManyToManyField(Bug)
 
     def __str__(self):
         return self.name

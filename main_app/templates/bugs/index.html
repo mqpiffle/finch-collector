@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content%}
+<h1>Bug List</h1>
+{% for bug in object_list %}
+<div class="card">
+    <a href="{% url 'bugs_detail' bug.id %}">
+        <div class="card-content">
+            <span class="card-title">
+                A
+                <span class="{{bug.color}}-text">{{ bug.color }}</span>
+                {{bug.name}}
+            </span>
+        </div>
+    </a>
+</div>
+{% endfor %} {% endblock %}
