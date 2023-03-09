@@ -86,6 +86,8 @@ WSGI_APPLICATION = 'finchcollector.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# local db
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -93,6 +95,7 @@ WSGI_APPLICATION = 'finchcollector.wsgi.application'
 #     }
 # }
 
+# deployed db bit.io
 DATABASES = {
     'default': dj_database_url.config(     
     default='postgresql://postgres:postgres@localhost:5432/finchcollector>',        
